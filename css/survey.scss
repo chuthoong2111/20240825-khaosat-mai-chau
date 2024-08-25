@@ -1,0 +1,367 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --light-bgr: #f5f5f5;
+    --light-gray: #dfdfdf;
+    --text-dark: #232323;
+    --text-body: #454545;
+    --text-light: #868686;
+    --brand-color: #3d8c35;
+    --shadow-sucsess: rgb(61, 140, 53, 0.1);
+    --shadow-danger: rgb(229, 51, 51, 0.1);
+    --shadow-gray: rgb(0, 0, 0, 0.06);
+    --brand-color2: #662b2b;
+    --red: rgb(229, 51, 51);
+    --sucsess: var(--brand-color);
+    --danger: var(--red);
+}
+
+@mixin generate($prefix, $property) {
+    // List of sizes to generate for each
+    $sizes: (0, 0.25, 0.5, 1, 1.5, 3);
+    // Spacing to multiply the sizes by
+    $spacing: 1rem;
+
+    // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
+    @for $i from 1 through length($sizes) {
+        // Get the size for the current index
+        $size: nth($sizes, $i);
+
+        // Create the rule, note that sass uses 1-based indexing, so the first item has an index of 1, not 0
+        .#{$prefix}-#{$i - 1} {
+            #{$property}: $spacing * $size;
+        }
+    }
+}
+
+$rules: ( ml margin-left, mt margin-top, mb margin-bottom, mr margin-right, m margin,
+pl padding-left,
+pt padding-top,
+pb padding-bottom,
+pr padding-right,
+p padding);
+
+@each $label, $prop in $rules {
+    @include generate($label, $prop);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    line-height: 1.44;
+    font-style: normal;
+    color: var(--text-body);
+}
+
+.color-dark {
+    color: var(--text-dark);
+}
+
+.color-primary {
+    color: var(--brand-color);
+}
+
+.color-primary2 {
+    color: var(--brand-color2);
+}
+
+.color-red {
+    color: var(--red);
+}
+
+.d-flex {
+    display: flex;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-start {
+    align-items: start;
+}
+
+.align-items-end {
+    align-items: end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-start {
+    text-align: left;
+}
+
+.text-end {
+    text-align: right;
+}
+
+.mx-auto {
+    margin: 0 auto;
+}
+small,.small{
+    font-size: 80%;
+}
+// main
+main {
+    margin: 0 auto;
+}
+
+.dash-bottom {
+    border-bottom: 1px dashed;
+    border-color: var(--light-gray);
+
+    &.color-primary {
+        border-color: var(--brand-color);
+    }
+}
+
+h2.dash-bottom {
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    width: max-content;
+    margin-top: 1.5rem;
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+    
+        &:last-child {
+            margin-bottom: 0;
+        }
+    label {
+        position: absolute;
+        background: #fff;
+        padding: 0.15rem;
+        left: 0.75rem;
+        top: -1rem;
+        font-size: 0.9rem;
+        
+    }
+}
+
+.form-control {
+    border: 1px solid var(--light-gray);
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    border-radius: 8px;
+    
+    &:focus {
+        border: 1px solid var(--brand-color);
+        outline: 0;
+        box-shadow: 0 0 0 0.4rem var(--shadow-sucsess);
+    }
+}
+.guest-info{
+    padding:2.5rem 2rem;
+    max-width: 640px;
+    margin: 0 auto;
+    box-shadow: 0 0 8px var(--shadow-gray);
+    border-radius: 12px;
+    border:1px solid var(--shadow-gray);
+    @media (max-width: 575.98px) {
+        padding: 1.5rem 1rem;
+            margin: 0 1rem;
+        }
+}
+.area{
+    padding: 1.5rem;
+    max-width: 640px;
+    margin: 0 auto 1rem;
+    box-shadow: 0 0 8px var(--shadow-gray);
+    border-radius: 12px;
+    border:1px solid var(--shadow-gray);
+    &:hover{
+    border: 1px solid var(--brand-color);
+    }
+    .bg-light{
+        border-radius: .5rem;
+    }
+    &:not(svg) h4{
+        margin-bottom: 1rem;
+    }
+        @media (max-width: 575.98px) {
+            padding:1.5rem 1rem;
+            margin: 0 1rem 1rem;
+        }
+}
+.name-survey{
+    width: 120px;
+    margin-right: 1rem;
+    text-align: start;
+    font-size: 90%;
+    @media (max-width: 575.98px) {
+        width: 100%;
+        flex-shrink: 0;
+        margin: 0;
+    }
+}
+.bg-light{
+    background: var(--light-bgr);
+}
+// radio chexbox
+.form-check-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem
+}
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid var(--brand-color);
+    z-index: 1
+}
+
+.form-check-label:hover input~.checkmark {
+    background-color: var(--brand-color)
+}
+
+.form-check-label input:checked~.checkmark {
+    background-color: var(--brand-color);
+    border: 1px solid var(--brand-color)
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none
+}
+
+.form-check-label input:checked~.checkmark:after {
+    display: block
+}
+
+.form-check-label .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+
+
+.radiomax {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid var(--brand-color);
+    z-index: 1;
+    border-radius: 50%;
+    position: relative;
+}
+
+.form-check-label:hover input~.radiomax,
+.form-check-label input:checked~.radiomax {
+    background-color: var(--brand-color)
+}
+.form-check-input{
+    display: none;
+}
+.radiomax:after {
+    content: "";
+    position: absolute;
+    display: none
+}
+
+.form-check-label input:checked~.radiomax:after {
+    display: block
+}
+
+.form-check-label .radiomax:after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff
+}
+.gap-1rem{
+    gap: 1rem;
+}
+.area-button{
+    background: var(--shadow-sucsess);
+}
+.btn{
+    background: var(--brand-color);
+    color: #fff;
+    padding: .8rem 2rem;
+    border-radius: .6rem;
+    display: inline-flex;
+}
+ @media (max-width: 390px) {
+    .area span:has(svg){
+        display: none;
+    }
+ }
