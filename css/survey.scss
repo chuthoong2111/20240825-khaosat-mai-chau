@@ -390,6 +390,7 @@ h2.dash-bottom {
         align-items: center;
         .logo{
             height: 10vw;
+            max-height: 60px;
             object-fit: cover;
         }
         ul{
@@ -443,7 +444,8 @@ h2.dash-bottom {
         filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
 -webkit-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
 -moz-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
-        max-height: 12vw;
+        height: 12vw;
         object-fit: cover;
+        max-height: 60px;
     }
  }

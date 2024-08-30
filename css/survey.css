@@ -622,6 +622,7 @@ h2.dash-bottom {
 }
 .header nav .logo {
   height: 10vw;
+  max-height: 60px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -675,7 +676,8 @@ h2.dash-bottom {
   filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
   -webkit-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
   -moz-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
-  max-height: 12vw;
+  height: 12vw;
   -o-object-fit: cover;
      object-fit: cover;
+  max-height: 60px;
 }/*# sourceMappingURL=survey.css.map */
