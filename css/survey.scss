@@ -375,15 +375,23 @@ h2.dash-bottom {
     max-width: 600px;
     margin: 0 auto;
     position: relative;
+    img{
+        max-width: 100%;
+    }
     nav{
         display: flex;
         justify-content: space-between;
         background: var(--black-op40);
-        padding: 1rem;
-        position: absolute;
+        padding:.5rem 1rem;
+        position: absolute;       
         top: 0;
         left: 0;
         width: 100%;
+        align-items: center;
+        .logo{
+            height: 10vw;
+            object-fit: cover;
+        }
         ul{
             display: flex;
             gap: 8px;
@@ -392,11 +400,11 @@ h2.dash-bottom {
             padding: 0;
             li{
                 a{
-                    padding: .5rem;
+                    padding: .25rem .5rem;
                     text-decoration: none;
                     color: #fff;
                     transition: all ease-in-out .3s;
-                    border-radius: .5rem;
+                    border-radius: .25rem;
                     font-size: 90%;
                     &:hover{
                         color: var(--light-gray);
@@ -407,5 +415,35 @@ h2.dash-bottom {
                 }
             }
         }
+    }
+ }
+ .footer{
+    padding: 2rem 1rem;
+    font-size: 90%;
+    color: #888;
+    h5{
+        text-transform: uppercase;
+    }
+    a{
+        text-decoration: none;
+        color: var(--brand-color);
+        &:hover{
+            color: var(--brand-color2);
+        }
+    }
+ }
+ .all-logo{
+    padding: 2rem 0;
+    background-color: var(--light-bgr);    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    img{
+        filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
+-webkit-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
+-moz-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
+        max-height: 12vw;
+        object-fit: cover;
     }
  }

@@ -606,15 +606,24 @@ h2.dash-bottom {
   margin: 0 auto;
   position: relative;
 }
+.header img {
+  max-width: 100%;
+}
 .header nav {
   display: flex;
   justify-content: space-between;
   background: var(--black-op40);
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  align-items: center;
+}
+.header nav .logo {
+  height: 10vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .header nav ul {
   display: flex;
@@ -624,11 +633,11 @@ h2.dash-bottom {
   padding: 0;
 }
 .header nav ul li a {
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
   text-decoration: none;
   color: #fff;
   transition: all ease-in-out 0.3s;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-size: 90%;
 }
 .header nav ul li a:hover {
@@ -636,4 +645,37 @@ h2.dash-bottom {
 }
 .header nav ul li a.active {
   background-color: var(--brand-color);
+}
+
+.footer {
+  padding: 2rem 1rem;
+  font-size: 90%;
+  color: #888;
+}
+.footer h5 {
+  text-transform: uppercase;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--brand-color);
+}
+.footer a:hover {
+  color: var(--brand-color2);
+}
+
+.all-logo {
+  padding: 2rem 0;
+  background-color: var(--light-bgr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.all-logo img {
+  filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
+  -webkit-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
+  -moz-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
+  max-height: 12vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=survey.css.map */
