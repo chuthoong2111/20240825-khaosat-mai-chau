@@ -388,6 +388,10 @@ h2.dash-bottom {
   padding-bottom: 0.5rem;
   width: -moz-max-content;
   width: max-content;
+  margin-top: 2.5rem;
+}
+
+main > p + h2.dash-bottom {
   margin-top: 1.5rem;
 }
 
@@ -450,7 +454,7 @@ h2.dash-bottom {
 .area {
   padding: 1.5rem;
   max-width: 640px;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
   box-shadow: 0 0 8px var(--shadow-gray);
   border-radius: 12px;
   border: 1px solid var(--shadow-gray);
@@ -601,6 +605,11 @@ h2.dash-bottom {
     display: none;
   }
 }
+.lead {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 .header {
   max-width: 600px;
   margin: 0 auto;
@@ -608,6 +617,7 @@ h2.dash-bottom {
 }
 .header img {
   max-width: 100%;
+  border-radius: 0 0 1rem 1rem;
 }
 .header nav {
   display: flex;
@@ -649,9 +659,11 @@ h2.dash-bottom {
 }
 
 .footer {
-  padding: 2rem 1rem;
+  padding: 3rem 0;
   font-size: 90%;
   color: #888;
+  max-width: 640px;
+  margin: 0 auto;
 }
 .footer h5 {
   text-transform: uppercase;
