@@ -442,13 +442,18 @@ main > p + h2.dash-bottom{
         }
     }
  }
- .all-logo{
+ .all-logo{    
     padding: 2rem 0;
     background-color: var(--light-bgr);    
+    
+    .inner{
+        max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 1rem;
+    }
     img{
         filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
 -webkit-filter: sepia(100%) brightness(85%) hue-rotate(71deg) saturate(166%) contrast(86%);
