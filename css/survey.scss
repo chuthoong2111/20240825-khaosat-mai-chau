@@ -334,8 +334,9 @@ main > p + h2.dash-bottom {
   border-radius: 50%;
   position: relative;
 }
-
-.form-check-label:hover input ~ .radiomax,
+.form-check-label:hover input ~ .radiomax{
+  background-color: var(--light-gray);
+}
 .form-check-label input:checked ~ .radiomax {
   background-color: var(--brand-color);
 }
