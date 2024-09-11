@@ -704,6 +704,11 @@ main > p + h2.dash-bottom {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (min-width: 960px) {
+  .all-logo img {
+    height: 72px;
+  }
+}
 
 .w-100 {
   width: 100%;
